@@ -50,6 +50,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         return mPosts.size();
     }
 
+    public void clear() {
+        mPosts.clear();
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ImageView photo;
         public TextView username;

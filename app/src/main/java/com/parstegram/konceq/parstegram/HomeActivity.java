@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -77,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
             }
+
         });
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +134,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
+        Toast.makeText(this, "Added post", Toast.LENGTH_SHORT).show();
     }
 
 
