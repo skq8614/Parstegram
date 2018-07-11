@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button refreshButton;
     private ImageView imageView;
     private Button captureButton;
+    private Button feedBtn;
     Bitmap bitmap;
     private File file;
 
@@ -46,6 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         createButton = findViewById(R.id.create_btn);
         refreshButton = findViewById(R.id.refresh_btn);
         imageView = findViewById(R.id.photo);
+        feedBtn = findViewById(R.id.feedBtn);
         captureButton = findViewById(R.id.captureBtn);
         captureButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -84,6 +86,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        feedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -96,6 +105,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
