@@ -50,8 +50,8 @@ public class Post extends ParseObject {
         }
 
         public Query getTop(){
-            orderByAscending("createdAt");
             setLimit(20);
+            orderByDescending("createdAt");
             return this;
         }
 

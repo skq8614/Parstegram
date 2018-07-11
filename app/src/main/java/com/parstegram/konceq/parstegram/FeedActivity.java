@@ -62,11 +62,13 @@ public class FeedActivity extends AppCompatActivity {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class).include("user");
         // Execute the find asynchronously
         query.setLimit(20);
+        query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<Post>() {
             public void done(List<Post> itemList, ParseException e) {
                 if (e == null) {
                     // Access the array of results here
                     posts.addAll(itemList);
+
                     postAdapter.notifyDataSetChanged();
                 } else {
                     Log.d("item", "Error: " + e.getMessage());
