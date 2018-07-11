@@ -105,22 +105,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    private void persistImage(Bitmap bitmap, String name) {
-        File filesDir = this.getFilesDir();
-        File imageFile = new File(filesDir, name + ".jpg");
-
-        OutputStream os;
-        try {
-            os = new FileOutputStream(imageFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
-            os.flush();
-            os.close();
-        } catch (Exception e) {
-            Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
-        }
-    }
-    */
 
     public void createPost(String description, ParseFile imageFile, ParseUser user){
         final Post newPost = new Post();
