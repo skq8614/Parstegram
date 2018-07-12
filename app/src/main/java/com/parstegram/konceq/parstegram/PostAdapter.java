@@ -38,6 +38,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
         viewHolder.caption.setText(post.getDescription());
         viewHolder.username.setText(post.getUser().getUsername());
+        String myTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
+        viewHolder.time.setText(myTime);
         //TODO can't post if you don't have a pic and caption
         if(post.getImage() != null) {
             Glide.with(context).load(post.getImage().getUrl())
@@ -60,12 +62,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         public ImageView photo;
         public TextView username;
         public TextView caption;
+        public TextView time;
 
         public ViewHolder(View itemView){
             super(itemView);
             photo = itemView.findViewById(R.id.photo);
             username = itemView.findViewById(R.id.username);
             caption = itemView.findViewById(R.id.caption);
+            time = itemView.findViewById(R.id.time);
             itemView.setOnClickListener(this);
         }
 

@@ -10,6 +10,7 @@ import android.util.Log;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,7 @@ public class FeedActivity extends AppCompatActivity {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class).include("user");
         // Execute the find asynchronously
         query.setLimit(20);
+        query.whereEqualTo("user", ParseUser.getCurrentUser());
         query.orderByDescending("createdAt");
         query.findInBackground(new FindCallback<Post>() {
             public void done(List<Post> itemList, ParseException e) {

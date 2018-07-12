@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".CaptureActivity">
 
     <EditText
         android:id="@+id/description_et"
@@ -21,17 +21,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="121dp"
+        android:layout_marginBottom="130dp"
         android:text="Create" />
 
     <Button
-        android:id="@+id/refresh_btn"
+        android:id="@+id/logoutBtn"
         android:layout_width="269dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="65dp"
-        android:text="Refresh" />
+        android:layout_marginBottom="14dp"
+        android:text="Logout" />
 
     <ImageView
         android:id="@+id/photo"
@@ -55,9 +55,9 @@
         android:id="@+id/feedBtn"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/create_btn"
-        android:layout_below="@+id/refresh_btn"
-        android:layout_marginTop="-65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
         android:text="Feed" />
 
 </RelativeLayout>

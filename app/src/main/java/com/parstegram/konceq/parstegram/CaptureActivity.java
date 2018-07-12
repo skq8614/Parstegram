@@ -26,13 +26,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class CaptureActivity extends AppCompatActivity {
 
     private static final String AUTHORITY = "com.parstegram.konceq.parstegram";
 
     private EditText descriptionInput;
     private Button createButton;
-    private Button refreshButton;
+    private Button logoutButton;
     private ImageView imageView;
     private Button captureButton;
     private Button feedBtn;
@@ -42,15 +42,15 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_capture);
 
         descriptionInput = findViewById(R.id.description_et);
         createButton = findViewById(R.id.create_btn);
-        refreshButton = findViewById(R.id.refresh_btn);
+        logoutButton = findViewById(R.id.logoutBtn);
         imageView = findViewById(R.id.photo);
         feedBtn = findViewById(R.id.feedBtn);
         captureButton = findViewById(R.id.captureBtn);
-        captureButton.setOnClickListener(new View.OnClickListener(){
+        captureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 File directory = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -81,20 +81,24 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
-        refreshButton.setOnClickListener(new View.OnClickListener() {
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadTopPosts();
+                ParseUser.logOut();
+                Intent i = new Intent(CaptureActivity.this, LoginActivity.class);
+                startActivity(i);
             }
         });
+
 
         feedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HomeActivity.this, FeedActivity.class);
+                Intent i = new Intent(CaptureActivity.this, FeedActivity.class);
                 startActivity(i);
             }
         });
+
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -127,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if(e==null){
-                    Log.d("HomeActivity", "Create post success");
+                    Log.d("CaptureActivity", "Create post success");
                 }
                 else{
                     e.printStackTrace();
@@ -135,6 +139,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         Toast.makeText(this, "Added post", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(CaptureActivity.this, FeedActivity.class);
+        startActivity(i);
     }
 
 
@@ -147,7 +153,7 @@ public class HomeActivity extends AppCompatActivity {
             public void done(List<Post> objects, ParseException e) {
                 if(e==null){
                     for(int i = 0; i < objects.size(); ++i) {
-                        Log.d("HomeActivity", "Post[" + i + "] = "
+                        Log.d("CaptureActivity", "Post[" + i + "] = "
                                 + objects.get(i).getDescription()
                                 + "\nusername = " + objects.get(i).getUser().getUsername()
                         );

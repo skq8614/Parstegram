@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/insta"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
 
     <ImageView
@@ -54,6 +54,18 @@
         android:visibility="visible"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="320dp" />
+
+    <Button
+        android:id="@+id/signUp"
+        android:layout_width="102dp"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp"
+        android:background="@drawable/button_bg_transparent"
+        android:text="or Sign Up"
+        android:textColor="@android:color/white"
+        android:visibility="visible" />
 
 
 </RelativeLayout>

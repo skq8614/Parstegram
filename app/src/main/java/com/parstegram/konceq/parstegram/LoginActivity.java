@@ -7,36 +7,36 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameInput;
     private EditText passwordInput;
     private Button loginBtn;
+    private Button signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
         if(ParseUser.getCurrentUser() != null){
-            final Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            final Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
             startActivity(intent);
             finish();
             return;
         }
-        */
 
-
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         usernameInput = findViewById(R.id.username_et);
         passwordInput = findViewById(R.id.password_et);
         loginBtn = findViewById(R.id.login_btn);
+        signUpButton = findViewById(R.id.signUp);
 
         loginBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
                 login(username, password);
             }
         });
+
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void login(String username, String password){
@@ -55,12 +63,13 @@ public class MainActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if(e == null){
                     Log.d("LoginActivity", "Login successful");
-                    final Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    final Intent intent = new Intent(LoginActivity.this, CaptureActivity.class);
                     startActivity(intent);
                     finish();
                 }
                 else{
                     Log.e("LoginActivity", "Login failure");
+                    Toast.makeText(LoginActivity.super.getBaseContext(), "Username or password incorrect", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
             }
