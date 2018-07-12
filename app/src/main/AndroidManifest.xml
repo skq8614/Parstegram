@@ -38,6 +38,7 @@
         </provider>
 
         <activity android:name=".FeedActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>

@@ -38,6 +38,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
         viewHolder.caption.setText(post.getDescription());
         viewHolder.username.setText(post.getUser().getUsername());
+        //TODO can't post if you don't have a pic and caption
         if(post.getImage() != null) {
             Glide.with(context).load(post.getImage().getUrl())
                     .into(viewHolder.photo);
@@ -73,10 +74,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             int position = getAdapterPosition();
             if(position != RecyclerView.NO_POSITION){
                 Post post = mPosts.get(position);
-                Intent i = new Intent(context, FeedActivity.class);
-                //i.putExtra("Post", Parcels.wrap(post));
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra("username", post.getUser().getUsername());
+                i.putExtra("photo", post.getImage().getUrl());
+                i.putExtra("caption", post.getDescription());
+                String myTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
+                i.putExtra("time", myTime);
                 context.startActivity(i);
-
             }
         }
     }
