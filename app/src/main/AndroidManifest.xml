@@ -39,7 +39,8 @@
 
         <activity android:name=".FeedActivity" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LandingActivity"></activity>
     </application>
 
 </manifest>
