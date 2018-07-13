@@ -47,7 +47,7 @@ public class CaptureActivity extends AppCompatActivity {
         descriptionInput = findViewById(R.id.description_et);
         createButton = findViewById(R.id.create_btn);
         logoutButton = findViewById(R.id.logoutBtn);
-        imageView = findViewById(R.id.photo);
+        imageView = findViewById(R.id.photo2);
         feedBtn = findViewById(R.id.feedBtn);
         captureButton = findViewById(R.id.captureBtn);
         captureButton.setOnClickListener(new View.OnClickListener() {

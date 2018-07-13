@@ -66,7 +66,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
         public ViewHolder(View itemView){
             super(itemView);
-            photo = itemView.findViewById(R.id.photo);
+            photo = itemView.findViewById(R.id.photo2);
             username = itemView.findViewById(R.id.username);
             caption = itemView.findViewById(R.id.caption);
             time = itemView.findViewById(R.id.time);

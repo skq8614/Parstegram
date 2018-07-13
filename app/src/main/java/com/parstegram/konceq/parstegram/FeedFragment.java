@@ -36,7 +36,6 @@ public class FeedFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_feed);
 
         feed = view.findViewById(R.id.feed);
         posts = new ArrayList<>();
@@ -60,7 +59,7 @@ public class FeedFragment extends Fragment {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-        
+
         populateTimeline();
     }
 

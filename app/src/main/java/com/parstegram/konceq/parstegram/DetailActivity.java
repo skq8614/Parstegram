@@ -19,7 +19,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        photo = findViewById(R.id.photo);
+        photo = findViewById(R.id.photo2);
         caption = findViewById(R.id.caption);
         username = findViewById(R.id.username);
         time = findViewById(R.id.time);
