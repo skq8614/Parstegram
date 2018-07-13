@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/insta"
     tools:context=".LoginActivity">
 
 
@@ -15,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="142dp"
-        app:srcCompat="@drawable/instagram" />
+        app:srcCompat="@drawable/insta2" />
 
     <EditText
         android:id="@+id/username_et"
