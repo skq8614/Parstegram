@@ -25,9 +25,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         if(ParseUser.getCurrentUser() != null){
+
             final Intent intent = new Intent(LoginActivity.this, LandingActivity.class);
             startActivity(intent);
             finish();
+
+            /*
+            setContentView(R.layout.activity_landing);
+            final Fragment fragmentFeed = new FeedFragment();
+            final FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.framelayout, fragmentFeed).commit();
+            */
             return;
         }
 

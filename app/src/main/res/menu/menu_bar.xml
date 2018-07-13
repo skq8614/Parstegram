@@ -5,22 +5,24 @@
     <item
         android:id="@+id/action_feed"
         android:enabled="true"
-        android:icon="@drawable/ic_burst_mode_black_24dp"
+        android:icon="@drawable/instagram_home_outline_24"
         android:title="Feed"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/action_camera"
         android:enabled="true"
-        android:icon="@drawable/ic_camera_alt_black_24dp"
+        android:icon="@drawable/instagram_new_post_outline_24"
         android:title="Camera" />
 
     <item
         android:id="@+id/action_profile"
         android:enabled="true"
-        android:icon="@drawable/ic_face_black_24dp"
+        android:icon="@drawable/instagram_user_outline_24"
         android:title="Profile"
         app:showAsAction="ifRoom" />
+
+
 
 
 </menu>

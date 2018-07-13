@@ -93,6 +93,7 @@ public class CaptureFragment extends Fragment {
 
         });
 
+
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -132,6 +133,7 @@ public class CaptureFragment extends Fragment {
                 }
             }
         });
+        descriptionInput.setText("");
         Toast.makeText(this.getContext(), "Added post", Toast.LENGTH_SHORT).show();
         //Intent i = new Intent(this.getContext(), FeedFragment.class);
         //startActivity(i);

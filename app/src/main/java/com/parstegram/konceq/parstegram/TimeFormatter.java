@@ -46,7 +46,7 @@ public class TimeFormatter {
         }  catch (ParseException e) {
             e.printStackTrace();
         }
-        return time;
+        return time + " ago";
     }
 
     /**

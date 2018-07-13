@@ -8,38 +8,40 @@
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="351dp"
-        android:layout_height="37dp"
-        android:layout_alignParentStart="true"
+        android:layout_width="159dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="43dp"
-        android:text="TextView" />
+        android:layout_alignStart="@+id/photo2"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/photo2"
-        android:layout_width="297dp"
-        android:layout_height="306dp"
+        android:layout_width="310dp"
+        android:layout_height="343dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="75dp"
         app:srcCompat="@android:color/black" />
 
     <TextView
         android:id="@+id/caption"
-        android:layout_width="353dp"
-        android:layout_height="89dp"
+        android:layout_width="295dp"
+        android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp"
-        android:text="TextView" />
+        android:layout_marginBottom="74dp"
+        android:textColor="@android:color/black"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/time"
         android:layout_width="299dp"
         android:layout_height="36dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="120dp"
-        android:layout_marginStart="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
         android:text="TextView" />
 </RelativeLayout>
