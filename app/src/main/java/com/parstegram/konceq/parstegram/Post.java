@@ -12,6 +12,7 @@ public class Post extends ParseObject {
     private static final String KEY_IMAGE = "image";
     private static final String KEY_USER = "user";
     private static final String KEY_CREATED_AT = "createdAt";
+    private static final String KEY_PROFILEPIC = "profilePic";
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);
@@ -38,6 +39,10 @@ public class Post extends ParseObject {
     }
 
     public ParseUser getTime(){ return getParseUser(KEY_CREATED_AT);}
+
+    public ParseFile getProfilePic(){ return getParseFile(KEY_PROFILEPIC); }
+
+    public void setProfilePic(ParseFile image) {put(KEY_PROFILEPIC, image);}
 
     public static class Query extends ParseQuery<Post>{
 

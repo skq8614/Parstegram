@@ -22,6 +22,9 @@ public class LandingActivity extends AppCompatActivity {
         final Fragment fragmentCapture = new CaptureFragment();
         final Fragment fragmentProfile = new ProfileFragment();
 
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout, fragmentFeed).commit();
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

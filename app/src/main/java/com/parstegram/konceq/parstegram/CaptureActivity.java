@@ -70,7 +70,7 @@ public class CaptureActivity extends AppCompatActivity {
                 final String description = descriptionInput.getText().toString();
                 final ParseUser user = ParseUser.getCurrentUser();
 
-                if(file == null || description == null){
+                if(file == null || description.equals("")){
                     Toast.makeText(CaptureActivity.super.getBaseContext(), "Must include an image and caption in order to post", Toast.LENGTH_LONG).show();
                     return;
                 }
