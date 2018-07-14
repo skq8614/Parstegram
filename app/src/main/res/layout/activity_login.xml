@@ -25,7 +25,7 @@
         android:layout_marginTop="208dp"
         android:background="@drawable/button_bg_transparent"
         android:hint="   Phone number, email or username"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="14dp"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="56dp" />
@@ -38,7 +38,7 @@
         android:background="@drawable/button_bg_transparent"
         android:hint="   Password"
         android:inputType="textPassword"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="14dp" />
 
     <Button

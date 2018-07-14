@@ -21,7 +21,7 @@
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="50dp"
         android:scaleType="fitCenter"
         app:srcCompat="@android:drawable/ic_menu_camera" />
@@ -32,21 +32,23 @@
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="140dp"
         android:layout_marginTop="260dp"
         android:background="@drawable/button_bg_transparent"
-        android:text="take photo" />
+        android:text="Take Photo"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/create_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_bg_transparent"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="125dp"
         android:layout_marginTop="420dp"
-        android:layout_marginLeft="115dp"
-        android:text="Share" />
+        android:background="@drawable/button_bg_transparent"
+        android:text="Share"
+        android:textAllCaps="false" />
 
 
 </FrameLayout>

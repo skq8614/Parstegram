@@ -46,7 +46,12 @@ public class TimeFormatter {
         }  catch (ParseException e) {
             e.printStackTrace();
         }
-        return time + " ago";
+        if(time.equals("Just now")){
+            return time;
+        }
+        else {
+            return time + " ago";
+        }
     }
 
     /**

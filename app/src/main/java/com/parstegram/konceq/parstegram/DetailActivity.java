@@ -27,7 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         caption = findViewById(R.id.caption);
         username = findViewById(R.id.username);
         time = findViewById(R.id.time);
-        icon = findViewById(R.id.myIcon);
+        icon = findViewById(R.id.myIcon2);
 
         String myCaption = getIntent().getStringExtra("caption");
         caption.setText(myCaption);
@@ -39,11 +39,8 @@ public class DetailActivity extends AppCompatActivity {
         String myTime = getIntent().getStringExtra("time");
         time.setText(myTime);
         String myPic = getIntent().getStringExtra("icon");
-        if(myPic.equals("")){ return;}
-        else {
-            Glide.with(this).load(myPic)
-                    .apply(bitmapTransform(new CircleCrop()))
-                    .into(icon);
-        }
+        Glide.with(this).load(myPic)
+                .apply(bitmapTransform(new CircleCrop()))
+                .into(icon);
     }
 }

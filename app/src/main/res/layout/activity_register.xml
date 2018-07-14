@@ -25,7 +25,7 @@
         android:layout_marginTop="207dp"
         android:background="@drawable/button_bg_transparent"
         android:hint="   Mobile Number or Email"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="56dp" />
@@ -37,7 +37,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/button_bg_transparent"
         android:hint="   Full Name"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="56dp" />
@@ -51,7 +51,7 @@
         android:layout_marginBottom="202dp"
         android:background="@drawable/button_bg_transparent"
         android:hint="   Username"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="56dp" />
@@ -65,7 +65,7 @@
         android:layout_marginBottom="142dp"
         android:background="@drawable/button_bg_transparent"
         android:hint="   Password"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="12sp" />
 
     <Button

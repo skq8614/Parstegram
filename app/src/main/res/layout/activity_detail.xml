@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/photo2"
-        android:layout_width="310dp"
-        android:layout_height="343dp"
+        android:layout_width="342dp"
+        android:layout_height="399dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
@@ -30,9 +30,8 @@
         android:id="@+id/caption"
         android:layout_width="295dp"
         android:layout_height="64dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/photo2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
         android:textColor="@android:color/black"
         android:textSize="16dp" />
 
@@ -40,9 +39,8 @@
         android:id="@+id/time"
         android:layout_width="299dp"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/caption"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp"
         android:text="TextView" />
 
     <ImageView
