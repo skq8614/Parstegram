@@ -40,8 +40,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How would they connect users to each other? 
+2. How can we implement upload an image instead of always taking a picture on the spot?
 
 ## Video Walkthrough
 
