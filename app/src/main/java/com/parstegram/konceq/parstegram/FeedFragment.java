@@ -79,7 +79,6 @@ public class FeedFragment extends Fragment {
                 if (e == null) {
                     // Access the array of results here
                     posts.addAll(itemList);
-
                     postAdapter.notifyDataSetChanged();
                 } else {
                     Log.d("item", "Error: " + e.getMessage());

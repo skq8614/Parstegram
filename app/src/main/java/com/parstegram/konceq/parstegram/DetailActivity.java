@@ -6,6 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -13,6 +16,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView caption;
     private TextView username;
     private TextView time;
+    private ImageView icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         caption = findViewById(R.id.caption);
         username = findViewById(R.id.username);
         time = findViewById(R.id.time);
+        icon = findViewById(R.id.myIcon);
 
         String myCaption = getIntent().getStringExtra("caption");
         caption.setText(myCaption);
@@ -33,5 +38,12 @@ public class DetailActivity extends AppCompatActivity {
                 .into(photo);
         String myTime = getIntent().getStringExtra("time");
         time.setText(myTime);
+        String myPic = getIntent().getStringExtra("icon");
+        if(myPic.equals("")){ return;}
+        else {
+            Glide.with(this).load(myPic)
+                    .apply(bitmapTransform(new CircleCrop()))
+                    .into(icon);
+        }
     }
 }

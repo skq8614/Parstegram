@@ -40,7 +40,9 @@ public class Post extends ParseObject {
 
     public ParseUser getTime(){ return getParseUser(KEY_CREATED_AT);}
 
-    public ParseFile getProfilePic(){ return getParseFile(KEY_PROFILEPIC); }
+    public ParseFile getProfilePic() {
+        return getParseUser(KEY_USER).getParseFile(KEY_PROFILEPIC);
+    }
 
     public void setProfilePic(ParseFile image) {put(KEY_PROFILEPIC, image);}
 

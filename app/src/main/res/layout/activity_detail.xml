@@ -10,9 +10,9 @@
         android:id="@+id/username"
         android:layout_width="159dp"
         android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/photo2"
-        android:layout_marginTop="40dp"
+        android:layout_above="@+id/photo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-75dp"
         android:textColor="@android:color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -44,4 +44,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="49dp"
         android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/myIcon2"
+        android:layout_width="57dp"
+        android:layout_height="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/caption"
+        android:layout_marginTop="22dp"
+        app:srcCompat="@drawable/instagram_user_outline_24" />
 </RelativeLayout>

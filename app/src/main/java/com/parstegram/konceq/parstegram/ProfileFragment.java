@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment {
                     public void done(ParseException e) {
                         user.put("profilePic", parseFile);
                         user.saveInBackground();
-                        Glide.with(ProfileFragment.this.getContext()).load(pic.getUrl())
+                        Glide.with(ProfileFragment.this.getContext()).load(parseFile.getUrl())
                                 .apply(bitmapTransform(new CircleCrop()))
                                 .into(imageView);
                         Toast.makeText(ProfileFragment.super.getContext(), "Profile pic updated", Toast.LENGTH_LONG).show();

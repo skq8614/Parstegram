@@ -11,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 
 import java.util.List;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
@@ -40,6 +43,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         viewHolder.username.setText(post.getUser().getUsername());
         String myTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
         viewHolder.time.setText(myTime);
+        if(post.getProfilePic() != null) {
+            Glide.with(context).load(post.getProfilePic().getUrl())
+                    .apply(bitmapTransform(new CircleCrop()))
+                    .into(viewHolder.icon);
+        }
         if(post.getImage() != null) {
             Glide.with(context).load(post.getImage().getUrl())
                     .into(viewHolder.photo);
@@ -62,6 +70,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         public TextView username;
         public TextView caption;
         public TextView time;
+        public ImageView icon;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -69,6 +78,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             username = itemView.findViewById(R.id.username);
             caption = itemView.findViewById(R.id.caption);
             time = itemView.findViewById(R.id.time);
+            icon = itemView.findViewById(R.id.myIcon);
+
             itemView.setOnClickListener(this);
         }
 
@@ -83,6 +94,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
                 i.putExtra("caption", post.getDescription());
                 String myTime = TimeFormatter.getTimeDifference(post.getCreatedAt().toString());
                 i.putExtra("time", myTime);
+                if(post.getProfilePic() != null) {
+                    i.putExtra("icon", post.getProfilePic().getUrl());
+                }
+                else{
+                    i.putExtra("icon", "");
+                }
                 context.startActivity(i);
             }
         }
